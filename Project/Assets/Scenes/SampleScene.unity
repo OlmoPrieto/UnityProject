@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 137715680}
   - component: {fileID: 137715682}
   - component: {fileID: 137715681}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 360458158}
   - component: {fileID: 360458157}
   - component: {fileID: 360458159}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rock Top 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 589559457}
   - component: {fileID: 589559458}
   - component: {fileID: 589559459}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rock Wall 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 1084893173}
   - component: {fileID: 1084893174}
   - component: {fileID: 1084893175}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Top platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ GameObject:
   - component: {fileID: 1112726742}
   - component: {fileID: 1112726741}
   - component: {fileID: 1112726743}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rock Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 1354474802}
   - component: {fileID: 1354474801}
   - component: {fileID: 1354474804}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +712,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1354474799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: 0.44, z: 0.0000000037253}
+  m_LocalPosition: {x: 0.49, y: 0.23, z: 0.0000000037253}
   m_LocalScale: {x: 0.03733003, y: 0.03733003, z: 0.03733003}
   m_Children:
   - {fileID: 519420032}
@@ -822,6 +822,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_rigidbody: {fileID: 0}
   m_speed: 200
+  m_jump_force: 7
+  m_grounded: 0
+  m_can_jump: 1
+  m_touching_wall: 0
 --- !u!1 &1549110525
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,7 +836,7 @@ GameObject:
   - component: {fileID: 1549110526}
   - component: {fileID: 1549110527}
   - component: {fileID: 1549110528}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rock Top 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,7 +1015,7 @@ GameObject:
   - component: {fileID: 2088785971}
   - component: {fileID: 2088785972}
   - component: {fileID: 2088785973}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Floating colum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
