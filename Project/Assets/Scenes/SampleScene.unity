@@ -823,9 +823,13 @@ MonoBehaviour:
   m_rigidbody: {fileID: 0}
   m_speed: 200
   m_jump_force: 7
+  m_x_wall_force: 4
   m_grounded: 0
   m_can_jump: 1
   m_touching_wall: 0
+  m_touching_right: 0
+  m_touching_left: 0
+  m_was_walljumping: 0
 --- !u!1 &1549110525
 GameObject:
   m_ObjectHideFlags: 0

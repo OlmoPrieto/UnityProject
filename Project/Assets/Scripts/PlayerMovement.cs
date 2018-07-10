@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour {
   public bool m_grounded = false;
   public bool m_can_jump = true;
   public bool m_touching_wall = false;
+  public bool m_touching_right = false;
+  public bool m_touching_left = false;
+  public bool m_was_walljumping = false;
 
 	// Use this for initialization
 	void Start () {
@@ -25,33 +28,55 @@ public class PlayerMovement : MonoBehaviour {
     Vector2 velocity = m_rigidbody.velocity;
     float speed = m_speed;
 
-    velocity.x = movement * speed * Time.deltaTime;
-
-    //m_rigidbody.velocity = new Vector2(movement * m_speed * Time.deltaTime, m_rigidbody.velocity.y);
-
     if (Input.GetKey(KeyCode.Space) && m_grounded == true) {
       m_grounded = false;
       m_can_jump = false;
+      
+      if (m_touching_wall == true) {
+        m_was_walljumping = true;
+        velocity.x = m_x_wall_force;
+      }
 
-      //m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x, m_jump_force);
-      velocity.x = m_x_wall_force;
       velocity.y = m_jump_force;
 
       StartCoroutine(ResetJumpRoutine());
+    }
+
+    if (m_was_walljumping == false) {
+      velocity.x = movement * speed * Time.deltaTime;
+    }
+    if (movement < 0 && m_touching_left || movement > 0 && m_touching_right) {
+      if (m_was_walljumping == false) {
+        velocity.x = 0;
+      }
     }
 
     m_rigidbody.velocity = velocity;
   }
 
   void OnCollisionEnter2D(Collision2D other) {
+    m_was_walljumping = false;
+
     if (other.collider.gameObject.layer == 9) {
       m_grounded = true;
     }
 
     if (other.collider.gameObject.layer == 10) {
-      m_x_wall_force = 1.0f;
+      m_touching_wall = true;
+
       if (transform.position.x < other.transform.position.x) {
-        m_x_wall_force = -m_x_wall_force;
+        m_touching_right = true;
+        m_touching_left = false;
+        if (m_x_wall_force > 0) {
+          m_x_wall_force = -m_x_wall_force;
+        }
+      }
+      else {
+        m_touching_right = false;
+        m_touching_left = true;
+        if (m_x_wall_force < 0) {
+          m_x_wall_force = -m_x_wall_force;
+        }
       }
 
       m_grounded = true;
@@ -65,12 +90,18 @@ public class PlayerMovement : MonoBehaviour {
 
     if (other.collider.gameObject.layer == 10) {
       m_grounded = false;
-      m_x_wall_force = 0.0f;
+      m_touching_wall = false;
+
+      m_touching_right = false;
+      m_touching_left = false;
     }
   }
 
   IEnumerator ResetJumpRoutine() {
     yield return new WaitForSeconds(0.2f);
-    m_can_jump = true;
+    //m_can_jump = true;
+    m_was_walljumping = false;
+    m_rigidbody.velocity = new Vector2(m_rigidbody.velocity.x * 0.0f, 
+      m_rigidbody.velocity.y);
   }
 }
