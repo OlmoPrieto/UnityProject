@@ -9,6 +9,8 @@ public class SkeletonAnimation : MonoBehaviour {
   public float m_change_animation_time = 5.0f;
   public float m_acc_time = 0.0f;
 
+  public bool m_flag = false;
+
 	// Use this for initialization
 	void Start () {
     m_acc_time = Random.value * 2.0f;
@@ -17,11 +19,21 @@ public class SkeletonAnimation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		m_acc_time += Time.deltaTime;
-    if (m_acc_time >= m_change_animation_time) {
-      m_acc_time = Random.value * 1.5f;
+    if (m_flag == true)
+    {
+      m_acc_time += Time.deltaTime;
+      if (m_acc_time >= m_change_animation_time)
+      {
+        m_acc_time = Random.value * 1.5f;
 
-      m_animator.SetTrigger("Attacking");
+        m_animator.SetTrigger("Attacking");
+      }
     }
 	}
+
+  public void Land()
+  {
+    m_animator.SetBool("Grounded", true);
+    m_flag = true;
+  }
 }
