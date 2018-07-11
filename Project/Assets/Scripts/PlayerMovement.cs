@@ -106,21 +106,23 @@ public class PlayerMovement : MonoBehaviour {
       }
     }
 
-    for (int i = 0; i < num_contacts; ++i) {
-      Debug.Log("x: " + contacts[i].point.x + "  y: " + contacts[i].point.y);
-    }
+    // for (int i = 0; i < num_contacts; ++i) {
+    //   Debug.Log("x: " + contacts[i].point.x + "  y: " + contacts[i].point.y);
+    // }
   }
 
   void OnCollisionExit2D(Collision2D other) {
     // Floors
     if (other.collider.gameObject.layer == 9) {
       m_grounded = false;
+
+      m_touching_wall = false;
+      m_touching_right = false;
+      m_touching_left = false;
     }
 
     // Walls
     if (other.collider.gameObject.layer == 10) {
-      m_grounded = false;
-      
       m_touching_wall = false;
       m_touching_right = false;
       m_touching_left = false;
