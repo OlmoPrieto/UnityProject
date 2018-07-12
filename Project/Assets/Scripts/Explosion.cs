@@ -36,11 +36,11 @@ public class Explosion : MonoBehaviour {
       m_freeze_gravity = false;
       m_rigidbody.gravityScale = 1.0f;
 
-      float random = Random.value * 2.0f - 0.5f;
+      float random = Random.value + 0.2f;// * 2.0f - 0.5f;
       m_direction.y = random;
 
       m_rigidbody.AddForce(m_direction * m_impulse, ForceMode2D.Impulse);
-      m_rigidbody.AddTorque(m_torque, ForceMode2D.Impulse);
+      m_rigidbody.AddTorque(m_torque + Random.value * 0.1f, ForceMode2D.Impulse);
     }
 	}
 
