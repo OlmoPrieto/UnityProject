@@ -20,8 +20,7 @@ public class SkeletonMovement : MonoBehaviour {
 		
 	}
 
-  void OnCollisionEnter2D(Collision2D other)
-  {
+  void OnCollisionEnter2D(Collision2D other) {
     // Floors
     if (other.collider.gameObject.layer == 9) {
       m_grounded = true;
@@ -29,8 +28,7 @@ public class SkeletonMovement : MonoBehaviour {
     }
   }
 
-  void OnCollisionExit2D(Collision2D other)
-  {
+  void OnCollisionExit2D(Collision2D other) {
     // Floors
     if (other.collider.gameObject.layer == 9) {
       m_grounded = false;
