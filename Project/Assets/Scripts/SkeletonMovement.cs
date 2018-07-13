@@ -32,6 +32,8 @@ public class SkeletonMovement : MonoBehaviour {
     // Floors
     if (other.collider.gameObject.layer == 9) {
       m_grounded = false;
+      //m_rigidbody.velocity = new Vector2(0.0f, m_rigidbody.velocity.y);
+      m_animation.Fall();
     }
   }
 }

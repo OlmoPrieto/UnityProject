@@ -31,9 +31,21 @@ public class SkeletonAnimation : MonoBehaviour {
     }
 	}
 
+  public void Fall() {
+    m_animator.SetBool("Grounded", false);
+  }
+
   public void Land() {
     m_animator.SetBool("Grounded", true);
     m_flag = true;
+  }
+
+  public void StandUp() {
+    m_animator.SetTrigger("StandUp");
+  }
+
+  public void StartMoving() {
+    m_animator.SetTrigger("StartMoving");
   }
 
   public void Die() {

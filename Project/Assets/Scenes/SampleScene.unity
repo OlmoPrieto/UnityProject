@@ -453,7 +453,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300020, guid: c99fc2b4399634be18a23805d8a11b41, type: 3}
+  m_Sprite: {fileID: 21300050, guid: c99fc2b4399634be18a23805d8a11b41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -470,7 +470,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 132653614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10016465, y: -0.3077469, z: -0.001953125}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
   m_LocalScale: {x: 0.38159183, y: 0.3815919, z: 0.3815919}
   m_Children:
   - {fileID: 1823466456}
@@ -1770,7 +1770,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
 --- !u!1001 &658888419
 Prefab:
@@ -2230,7 +2230,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 853537556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.89716464, y: -4.4862533, z: 0.2109375}
+  m_LocalPosition: {x: 1.549, y: 3.035, z: 0.2109375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 992651260}
@@ -2765,8 +2765,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1084893172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.22, y: 1.57, z: 0}
-  m_LocalScale: {x: 0.18859345, y: 0.008420752, z: 1}
+  m_LocalPosition: {x: 1.22, y: 1.58, z: 0}
+  m_LocalScale: {x: 0.18859345, y: 0.012736389, z: 1}
   m_Children: []
   m_Father: {fileID: 1579432034}
   m_RootOrder: 1
@@ -3219,7 +3219,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
 --- !u!1001 &1299436191
 Prefab:
@@ -4578,7 +4578,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
 --- !u!1 &2088785970
 GameObject:
@@ -4854,7 +4854,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2134539963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.64, y: -3.58, z: -0.02734375}
+  m_LocalPosition: {x: 5.94, y: 4.63, z: -0.02734375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1354474800}
