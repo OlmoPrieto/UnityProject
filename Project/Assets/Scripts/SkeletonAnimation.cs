@@ -39,5 +39,9 @@ public class SkeletonAnimation : MonoBehaviour {
   public void Die() {
     this.gameObject.SetActive(false);
     m_bones_transform.gameObject.SetActive(true);
+    for (int i = 0; i < m_bones_transform.childCount; ++i) {
+      m_bones_transform.GetChild(i).GetComponent<Explosion>().customStart();
+      m_bones_transform.GetChild(i).GetComponent<Explosion>().explode();
+    }
   }
 }
